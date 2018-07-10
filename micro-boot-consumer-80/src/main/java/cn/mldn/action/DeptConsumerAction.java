@@ -11,9 +11,9 @@ import cn.mldn.dto.DeptDTO;
 
 @RestController
 public class DeptConsumerAction {
-	public static final String DEPT_ADD_URL = "http://dept-8001.com:8001/dept/add" ;
-	public static final String DEPT_GET_URL = "http://dept-8001.com:8001/dept/get/" ;
-	public static final String DEPT_LIST_URL = "http://dept-8001.com:8001/dept/list" ;
+	public static final String DEPT_ADD_URL = "http://MICRO-CLOUD-DEPT-SERVICE/dept/add" ;
+	public static final String DEPT_GET_URL = "http://MICRO-CLOUD-DEPT-SERVICE/dept/get/" ;
+	public static final String DEPT_LIST_URL = "http://MICRO-CLOUD-DEPT-SERVICE/dept/list" ;
 	@Autowired
 	private RestTemplate restTemplate ;
 	@GetMapping("/dept/list")
