@@ -16,10 +16,12 @@ import cn.mldn.service.IDeptService;
 public class DeptRest {
 	@Autowired
 	private IDeptService deptService ;
+	@HystrixCommand
 	@PostMapping("/dept/add")
 	public Object add(@RequestBody DeptDTO dto) { 
 		return this.deptService.add(dto) ;
 	}
+	@HystrixCommand
 	@GetMapping("/dept/get/{deptno}")
 	public Object get(@PathVariable("deptno") long deptno) {
 		if (deptno == 1) {
@@ -27,8 +29,9 @@ public class DeptRest {
 		}
 		return this.deptService.get(deptno) ;
 	}
+	@HystrixCommand
 	@GetMapping("/dept/list")  
 	public Object list() {
 		return this.deptService.list() ;
 	}
-}
+} 
