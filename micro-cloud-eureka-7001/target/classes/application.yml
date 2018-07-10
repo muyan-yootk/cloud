@@ -13,4 +13,4 @@ eureka:
     registerWithEureka: false # 不向eureka中注册
     fetchRegistry: false # 不通过eureka抓取配置
     serviceUrl: # 定义所有注册的eureka的地址 
-      defaultZone: http://edmin:mldnjava@eureka-7002.com:7002/eureka/,http://edmin:mldnjava@eureka-7003.com:7003/eureka/
+      defaultZone: http://edmin:mldnjava@eureka-7001.com:7001/eureka/

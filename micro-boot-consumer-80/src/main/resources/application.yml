@@ -1,6 +1,14 @@
 server: 
   port: 80   # 定义服务端口
 
+feign: 
+  client:
+    config:
+      default:
+        connectTimeout: 5000
+  hystrix: 
+    enabled: true
+
 logging:
   level:
     cn.mldn.service: DEBUG
@@ -8,6 +16,7 @@ logging:
 eureka:
   client:
     register-with-eureka: false  # 客户端不需要进行Eureka服务注册
+    fetch-registry: true # 抓取服务器端的配置信息
     serviceUrl: 
       defaultZone: 
         http://edmin:mldnjava@eureka-7001.com:7001/eureka/

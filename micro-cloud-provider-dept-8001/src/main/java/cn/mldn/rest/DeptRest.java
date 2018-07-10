@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
+
 import cn.mldn.dto.DeptDTO;
 import cn.mldn.service.IDeptService;
 
@@ -20,6 +22,9 @@ public class DeptRest {
 	}
 	@GetMapping("/dept/get/{deptno}")
 	public Object get(@PathVariable("deptno") long deptno) {
+		if (deptno == 1) {
+			throw new RuntimeException("不允许查询1号内容。") ;
+		}
 		return this.deptService.get(deptno) ;
 	}
 	@GetMapping("/dept/list")  
