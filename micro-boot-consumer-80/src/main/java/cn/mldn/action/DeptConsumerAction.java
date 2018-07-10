@@ -1,31 +1,26 @@
 package cn.mldn.action;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.client.RestTemplate;
 
 import cn.mldn.dto.DeptDTO;
+import cn.mldn.service.IDeptService;
 
 @RestController
 public class DeptConsumerAction {
-	public static final String DEPT_ADD_URL = "http://MICRO-CLOUD-DEPT-SERVICE/dept/add" ;
-	public static final String DEPT_GET_URL = "http://MICRO-CLOUD-DEPT-SERVICE/dept/get/" ;
-	public static final String DEPT_LIST_URL = "http://MICRO-CLOUD-DEPT-SERVICE/dept/list" ;
 	@Autowired
-	private RestTemplate restTemplate ;
+	private IDeptService deptService ;
 	@GetMapping("/dept/list")
 	public Object list() {
-		return this.restTemplate.getForObject(DEPT_LIST_URL, List.class) ;
+		return this.deptService.list() ;
 	}
 	@GetMapping("/dept/get")
 	public Object get(long deptno) {
-		return this.restTemplate.getForObject(DEPT_GET_URL + deptno, DeptDTO.class) ;
+		return this.deptService.get(deptno) ;
 	}
 	@GetMapping("/dept/add")
 	public Object add(DeptDTO dto) {
-		return this.restTemplate.postForObject(DEPT_ADD_URL, dto, DeptDTO.class) ; 
+		return this.deptService.add(dto) ;  
 	}
 }

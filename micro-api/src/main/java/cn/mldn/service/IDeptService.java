@@ -2,10 +2,20 @@ package cn.mldn.service;
 
 import java.util.List;
 
-import cn.mldn.dto.DeptDTO;
+import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 
+import cn.mldn.dto.DeptDTO;
+import cn.mldn.service.config.FeignClientConfig;
+
+@FeignClient(value = "MICRO-CLOUD-DEPT-SERVICE",configuration=FeignClientConfig.class) // 定义现在要调用的微服务名称
 public interface IDeptService {
+	@PostMapping("/dept/add")
 	public DeptDTO add(DeptDTO dto) ;
-	public DeptDTO get(long deptno) ;
-	public List<DeptDTO> list() ;
+	@GetMapping("/dept/get/{dno}")
+	public DeptDTO get(@PathVariable("dno") long deptno) ;
+	@GetMapping("/dept/list")
+	public List<DeptDTO> list() ; 
 }
