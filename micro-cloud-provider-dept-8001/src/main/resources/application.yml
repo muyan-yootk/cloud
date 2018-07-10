@@ -6,8 +6,8 @@ eureka:
   instance:
     instance-id: dept-8001.com
   client:
-    serviceUrl:
-      defaultZone: http://eureka-7001.com:7001/eureka/
+    serviceUrl: 
+      defaultZone: http://edmin:mldnjava@eureka-7001.com:7001/eureka/
 spring:
   application:
     name: micro-cloud-dept-service
