@@ -146,9 +146,9 @@
 	<modules>
 		<module>micro-boot-consumer-80</module>
 		<module>micro-cloud-provider-dept-8001</module>
+		<module>micro-cloud-provider-dept-8002</module>
+		<module>micro-cloud-provider-dept-8003</module>
 		<module>micro-cloud-eureka-7001</module>
-		<module>micro-cloud-eureka-7002</module>
-		<module>micro-cloud-eureka-7003</module>
 		<module>micro-api</module>
 	</modules>
 </project>

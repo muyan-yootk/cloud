@@ -8,9 +8,7 @@ eureka:
   client:
     serviceUrl: 
       defaultZone: 
-        http://edmin:mldnjava@eureka-7001.com:7001/eureka/,
-        http://edmin:mldnjava@eureka-7002.com:7002/eureka/,
-        http://edmin:mldnjava@eureka-7003.com:7003/eureka/
+        http://edmin:mldnjava@eureka-7001.com:7001/eureka/
         
 spring:
   application:
