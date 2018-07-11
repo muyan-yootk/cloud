@@ -5,6 +5,10 @@ zuul:
   ignored-services: "*"  # 忽略掉所有的名称访问
   routes:
    micro-cloud-dept-service : /dept-cloud/**  
+  host:
+    socket-timeout-millis: 2000
+    connect-timeout-millis: 2000
+    
 eureka:
   instance:
     instance-id: gateway-8501.com
