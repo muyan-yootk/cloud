@@ -1,0 +1,17 @@
+server: 
+  port: 8501   # 定义服务端口 
+zuul:
+  prefix: /mldn-proxy
+  ignored-services: "*"  # 忽略掉所有的名称访问
+  routes:
+   micro-cloud-dept-service : /dept-cloud/**  
+eureka:
+  instance:
+    instance-id: gateway-8501.com
+  client:
+    serviceUrl: 
+      defaultZone: 
+        http://edmin:mldnjava@eureka-7001.com:7001/eureka/
+spring:
+  application:
+    name: micro-cloud-gateway

@@ -24,9 +24,6 @@ public class DeptRest {
 	@HystrixCommand
 	@GetMapping("/dept/get/{deptno}")
 	public Object get(@PathVariable("deptno") long deptno) {
-		if (deptno == 1) {
-			throw new RuntimeException("不允许查询1号内容。") ;
-		}
 		return this.deptService.get(deptno) ;
 	}
 	@HystrixCommand

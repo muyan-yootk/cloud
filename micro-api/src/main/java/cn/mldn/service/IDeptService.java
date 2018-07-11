@@ -11,14 +11,14 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import cn.mldn.dto.DeptDTO;
  
-@FeignClient(value = "MICRO-CLOUD-DEPT-SERVICE", 
+@FeignClient(value = "MICRO-CLOUD-GATEWAY", 
 	configuration = FeignClientConfig.class,
 	fallback=DeptServiceFallback.class) // 定义现在要调用的微服务名称 
 public interface IDeptService {
-	@PostMapping("/dept/add")
+	@PostMapping("/mldn-proxy/dept-cloud/dept/add")
 	public DeptDTO add(DeptDTO dto) ;
-	@GetMapping("/dept/get/{dno}")
+	@GetMapping("/mldn-proxy/dept-cloud/dept/get/{dno}")
 	public DeptDTO get(@PathVariable("dno") long deptno) ;
-	@GetMapping("/dept/list")
+	@GetMapping("/mldn-proxy/dept-cloud/dept/list")
 	public List<DeptDTO> list() ; 
 }

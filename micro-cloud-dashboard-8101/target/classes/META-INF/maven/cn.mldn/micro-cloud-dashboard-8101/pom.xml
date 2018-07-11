@@ -9,8 +9,8 @@
 		<artifactId>micro</artifactId>
 		<version>0.0.1</version>
 	</parent>
-	<artifactId>micro-cloud-eureka-dashboard-8101</artifactId>
-	<name>micro-cloud-eureka-dashboard-8101</name>
+	<artifactId>micro-cloud-dashboard-8101</artifactId>
+	<name>micro-cloud-dashboard-8101</name>
 	<url>http://maven.apache.org</url>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

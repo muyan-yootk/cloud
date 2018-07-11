@@ -146,8 +146,9 @@
 	<modules>
 		<module>micro-boot-consumer-80</module>
 		<module>micro-cloud-provider-dept-8001</module>
-		<module>micro-cloud-eureka-dashboard-8101</module>
+		<module>micro-cloud-dashboard-8101</module>
 		<module>micro-cloud-eureka-7001</module>
+		<module>micro-cloud-zull-gateway-8501</module>
 		<module>micro-api</module>
 	</modules>
 </project>
