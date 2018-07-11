@@ -1,0 +1,18 @@
+eureka:
+  instance:
+    instance-id: dept-8001.com
+  client:
+    serviceUrl: 
+      defaultZone: 
+        http://edmin:mldnjava@eureka-7001.com:7001/eureka/
+spring: 
+  cloud: 
+    config:
+      name: micro-cloud-dept-service
+      profile: product
+      label: master 
+      username: cdmin
+      password: mldnjava
+      discovery: 
+        enabled: true # 通过eureka获取配置服务器的地址
+        service-id: MICRO-CLOUD-CONFIG # Eureka之中CloudConfig的服务名称
