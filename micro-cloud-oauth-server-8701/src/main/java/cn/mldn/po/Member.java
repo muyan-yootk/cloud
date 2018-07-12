@@ -36,4 +36,9 @@ public class Member implements Serializable {
 	public void setLocked(Integer locked) {
 		this.locked = locked;
 	}
+	@Override
+	public String toString() {
+		return "Member [mid=" + mid + ", name=" + name + ", password=" + password + ", locked=" + locked + "]";
+	}
+	
 }
