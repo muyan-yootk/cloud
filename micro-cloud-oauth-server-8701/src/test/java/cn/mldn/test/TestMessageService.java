@@ -8,11 +8,11 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 
-import cn.mldn.StartGatewayMain8501;
+import cn.mldn.StartOAuthServer8701;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @WebAppConfiguration	// Spring需要启动容器才可以测试
-@SpringBootTest(classes=StartGatewayMain8501.class)
+@SpringBootTest(classes=StartOAuthServer8701.class)
 public class TestMessageService {
 	private static final Logger LOG = LoggerFactory.getLogger(TestMessageService.class) ;
 	@Test
