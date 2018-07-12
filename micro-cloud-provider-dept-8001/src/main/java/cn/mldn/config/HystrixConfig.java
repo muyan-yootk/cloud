@@ -8,15 +8,15 @@ import org.springframework.context.annotation.Configuration;
 
 import com.netflix.hystrix.contrib.metrics.eventstream.HystrixMetricsStreamServlet;
 
-@Configuration
-public class HystrixConfig {
-	@Bean
-	public ServletRegistrationBean<HttpServlet> getServlet() {
-		HystrixMetricsStreamServlet streamServlet = new HystrixMetricsStreamServlet();
-		ServletRegistrationBean<HttpServlet> registrationBean = new ServletRegistrationBean<HttpServlet>(streamServlet);
-		registrationBean.setLoadOnStartup(1);
-		registrationBean.addUrlMappings("/actuator/hystrix.stream");
-		registrationBean.setName("HystrixMetricsStreamServlet");
-		return registrationBean;
-	}
-}
+//@Configuration
+//public class HystrixConfig {
+//	@Bean
+//	public ServletRegistrationBean<HttpServlet> getServlet() {
+//		HystrixMetricsStreamServlet streamServlet = new HystrixMetricsStreamServlet();
+//		ServletRegistrationBean<HttpServlet> registrationBean = new ServletRegistrationBean<HttpServlet>(streamServlet);
+//		registrationBean.setLoadOnStartup(1);
+//		registrationBean.addUrlMappings("/actuator/hystrix.stream");
+//		registrationBean.setName("HystrixMetricsStreamServlet");
+//		return registrationBean;
+//	}
+//}

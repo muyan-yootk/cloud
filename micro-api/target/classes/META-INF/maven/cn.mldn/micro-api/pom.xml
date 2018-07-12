@@ -7,8 +7,8 @@
 	<parent>
 		<groupId>cn.mldn</groupId>
 		<artifactId>micro</artifactId>
-		<version>0.0.1</version>
-	</parent>
+		<version>0.0.1</version> 
+	</parent> 
 	<artifactId>micro-api</artifactId>
 	<name>micro-api</name>
 	<url>http://maven.apache.org</url>
@@ -18,7 +18,7 @@
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-openfeign</artifactId>
+			<artifactId>spring-cloud-starter-feign</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>junit</groupId>

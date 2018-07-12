@@ -12,7 +12,6 @@ import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import org.springframework.stereotype.Service;
 
 import cn.mldn.dao.IMemberDAO;
 import cn.mldn.po.Member;
@@ -21,11 +20,10 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 	private IMemberDAO memberDAO ; 
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-		Optional<Member> optional = this.memberDAO.findById(username) ;
-		if (!optional.isPresent()) {
+		Member member = this.memberDAO.findOne(username) ;
+		if (member == null) {
 			throw new UsernameNotFoundException("\"" + username + "\"没有发现，无法登录。");
 		}
-		Member member = optional.get() ;
 		if (!member.getLocked().equals(0)) {
 			throw new UsernameNotFoundException("\"" + username + "\"没有发现，无法登录。");
 		}
@@ -34,7 +32,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 		set.forEach((role)->{
 			all.add(new SimpleGrantedAuthority(role)) ;
 		});
-		User user = new User(username, "{noop}"+member.getPassword(), all);
+		User user = new User(username, member.getPassword(), all);
 		return user ;
 	}
 

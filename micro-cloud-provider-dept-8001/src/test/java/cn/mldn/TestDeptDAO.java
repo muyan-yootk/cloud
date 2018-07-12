@@ -4,7 +4,6 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.data.domain.ExampleMatcher;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 
@@ -18,6 +17,6 @@ public class TestDeptDAO {
 	private IDeptDAO deptDAO ;
 	@Test
 	public void test() {
-		System.out.println(this.deptDAO.findById(6L));
+		System.out.println(this.deptDAO.getOne(6L));
 	}
 }

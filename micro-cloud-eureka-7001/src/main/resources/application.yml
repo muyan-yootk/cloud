@@ -6,6 +6,11 @@ server:
 #      name: edmin
 #      password: mldnjava
 
+security:
+  user:
+    name: edmin
+    password: mldnjava
+
 eureka:
   instance:
     hostname: eureka-7001.com  # 运行的主机名称

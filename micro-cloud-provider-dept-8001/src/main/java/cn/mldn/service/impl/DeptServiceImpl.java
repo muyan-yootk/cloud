@@ -6,7 +6,6 @@ import java.util.Optional;
 
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.stereotype.Service;
 
 import cn.mldn.dao.IDeptDAO;
@@ -28,11 +27,11 @@ public class DeptServiceImpl implements IDeptService {
 
 	@Override
 	public DeptDTO get(long deptno) {
-		Optional<Dept> opt = this.deptDAO.findById(deptno) ;
+		Dept dept = this.deptDAO.getOne(deptno) ;
 		DeptDTO returnDTO = null ;
-		if (opt.isPresent()) {
+		if (dept != null) {
 			returnDTO = new DeptDTO() ;
-			BeanUtils.copyProperties(opt.get(), returnDTO);	
+			BeanUtils.copyProperties(dept, returnDTO);	
 		} 
 		return returnDTO ; 
 	}

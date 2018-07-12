@@ -14,14 +14,7 @@ import org.springframework.stereotype.Component;
 import com.netflix.hystrix.exception.HystrixTimeoutException;
 @Component
 public class DeptProviderFallback implements FallbackProvider {
-	@Override
-	public ClientHttpResponse fallbackResponse(String route, Throwable cause) {
-		if (cause instanceof HystrixTimeoutException) {
-			return response(HttpStatus.GATEWAY_TIMEOUT);
-		} else {
-			return response(HttpStatus.INTERNAL_SERVER_ERROR);
-		}
-	}
+
 	@Override
 	public String getRoute() {
 		return "micro-cloud-dept-service";	// 编写要进行服务降级微服务名称
@@ -62,5 +55,20 @@ public class DeptProviderFallback implements FallbackProvider {
             }
         };
     }
+
+	@Override
+	public ClientHttpResponse fallbackResponse() {
+		return response(HttpStatus.INTERNAL_SERVER_ERROR);
+	}
+
+	@Override
+	public ClientHttpResponse fallbackResponse(Throwable cause) {
+		if (cause instanceof HystrixTimeoutException) {
+			return response(HttpStatus.GATEWAY_TIMEOUT);
+		} else {
+			return response(HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+	}
+	
 
 }

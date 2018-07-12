@@ -44,5 +44,11 @@ public class Client implements Serializable {
 	public void setAuthorizedgranttypes(String authorizedgranttypes) {
 		this.authorizedgranttypes = authorizedgranttypes;
 	}
+	@Override
+	public String toString() {
+		return "Client [clientid=" + clientid + ", clientsecret=" + clientsecret + ", scope=" + scope + ", locked="
+				+ locked + ", authorizedgranttypes=" + authorizedgranttypes + "]";
+	}
+	
 	
 }

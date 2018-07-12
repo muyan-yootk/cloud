@@ -1,18 +1,29 @@
-#security:
-#  oauth2:
-#    resource:
-#      filter-order: 3
+security:
+  oauth2:
+    resource:
+      filter-order: 3
 
 server: 
   port: 8701   # 定义服务端口 
 eureka:
   instance:
-    instance-id: gateway-8501.com
+    instance-id: oauth-8701.com
   client:
     serviceUrl: 
       defaultZone: 
-        http://edmin:mldnjava@eureka-7001.com:7001/eureka/
+        http://edmin:mldnjava@eureka-7001.com:7001/eureka/ 
 spring:
+  redis:              # Redis相关配置
+    host: redis-single      # 主机名称
+    port: 6379            # 端口号
+    password: mldnjava        # 认证密码
+    timeout: 1000         # 连接超时时间
+    database: 0           # 默认数据库
+    pool:               # 连接池配置 
+      max-active: 10        # 最大连接数
+      max-idle: 8         # 最大维持连接数
+      min-idle: 2         # 最小维持连接数
+      max-wait: 100         # 最大等待连接超时时间
   datasource: 
     type: com.alibaba.druid.pool.DruidDataSource  # 配置当前要使用的数据源的操作类型
     driver-class-name: org.gjt.mm.mysql.Driver    # 配置MySQL的驱动程序类

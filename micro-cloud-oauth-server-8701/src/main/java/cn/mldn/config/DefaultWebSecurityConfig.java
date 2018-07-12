@@ -12,10 +12,8 @@ import cn.mldn.service.impl.UserDetailsServiceImpl;
 public class DefaultWebSecurityConfig extends WebSecurityConfigurerAdapter {
 	@Bean
 	public UserDetailsService getUserDetailsService() {
-		return new UserDetailsServiceImpl() ;
+		return new UserDetailsServiceImpl() ; 
 	}
-
-	
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 		auth.userDetailsService(this.getUserDetailsService()) ;

@@ -1,0 +1,11 @@
+D:\micro-workspace\micro\micro-cloud-oauth-server-8701\src\main\java\cn\mldn\config\DefaultAuthorizationServerConfigurerAdapter.java
+D:\micro-workspace\micro\micro-cloud-oauth-server-8701\src\main\java\cn\mldn\config\DefaultResourceServerConfigurerAdapter.java
+D:\micro-workspace\micro\micro-cloud-oauth-server-8701\src\main\java\cn\mldn\service\impl\ClientDetailsServiceImpl.java
+D:\micro-workspace\micro\micro-cloud-oauth-server-8701\src\main\java\cn\mldn\po\Member.java
+D:\micro-workspace\micro\micro-cloud-oauth-server-8701\src\main\java\cn\mldn\StartOAuthServer8701.java
+D:\micro-workspace\micro\micro-cloud-oauth-server-8701\src\main\java\cn\mldn\dao\IMemberDAO.java
+D:\micro-workspace\micro\micro-cloud-oauth-server-8701\src\main\java\cn\mldn\config\DefaultWebSecurityConfig.java
+D:\micro-workspace\micro\micro-cloud-oauth-server-8701\src\main\java\cn\mldn\dao\IClientDAO.java
+D:\micro-workspace\micro\micro-cloud-oauth-server-8701\src\main\java\cn\mldn\rest\ResourceRest.java
+D:\micro-workspace\micro\micro-cloud-oauth-server-8701\src\main\java\cn\mldn\po\Client.java
+D:\micro-workspace\micro\micro-cloud-oauth-server-8701\src\main\java\cn\mldn\service\impl\UserDetailsServiceImpl.java
