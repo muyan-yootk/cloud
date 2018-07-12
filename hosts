@@ -7,3 +7,10 @@
 127.0.0.1 eureka-7003.com
 
 127.0.0.1 dashboard-8101.com
+
+127.0.0.1 gateway-8501.com
+
+127.0.0.1 config-8701.com
+127.0.0.1 config-7501.com
+127.0.0.1 config-9001.com
+127.0.0.1 oauth-8701.com
